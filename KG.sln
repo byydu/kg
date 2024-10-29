@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2EE48B66-5646-49DE-809B-4C8971E5E0C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KG.Map", "src\KG.Map\KG.Map.csproj", "{3D0CD6EC-63A7-44D6-87CC-523A91EDC04F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D0CD6EC-63A7-44D6-87CC-523A91EDC04F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D0CD6EC-63A7-44D6-87CC-523A91EDC04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D0CD6EC-63A7-44D6-87CC-523A91EDC04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D0CD6EC-63A7-44D6-87CC-523A91EDC04F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3D0CD6EC-63A7-44D6-87CC-523A91EDC04F} = {2EE48B66-5646-49DE-809B-4C8971E5E0C5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B2A0AED-4F1B-40A2-9687-E1A3DF89C70E}
+	EndGlobalSection
+EndGlobal

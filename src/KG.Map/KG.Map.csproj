@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\dragon11.png" />
+    <EmbeddedResource Include="Resources\dragon12.png" />
+    <EmbeddedResource Include="Resources\dragon13.png" />
+    <EmbeddedResource Include="Resources\dragon14.png" />
+    <EmbeddedResource Include="Resources\dragon15.png" />
+    <EmbeddedResource Include="Resources\dragon21.png" />
+    <EmbeddedResource Include="Resources\dragon22.png" />
+    <EmbeddedResource Include="Resources\dragon23.png" />
+    <EmbeddedResource Include="Resources\dragon24.png" />
+    <EmbeddedResource Include="Resources\dragon25.png" />
+    <EmbeddedResource Include="Resources\dragon31.png" />
+    <EmbeddedResource Include="Resources\dragon32.png" />
+    <EmbeddedResource Include="Resources\dragon33.png" />
+    <EmbeddedResource Include="Resources\dragon34.png" />
+    <EmbeddedResource Include="Resources\dragon35.png" />
+    <EmbeddedResource Include="Resources\dragon41.png" />
+    <EmbeddedResource Include="Resources\dragon42.png" />
+    <EmbeddedResource Include="Resources\dragon43.png" />
+    <EmbeddedResource Include="Resources\dragon44.png" />
+    <EmbeddedResource Include="Resources\dragon45.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
