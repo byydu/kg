@@ -17,9 +17,9 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore /p:EnableWindowsTargeting=true
     - name: Build
-      run: dotnet build --no-restore --configuration Release --output kg.map
+      run: dotnet build /p:EnableWindowsTargeting=true --no-restore --configuration Release --output kg.map
     - name: Zip
       run: zip kg.map-${{ github.event.release.tag_name }}.zip kg.map
     - name: upload release
