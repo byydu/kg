@@ -22,7 +22,7 @@ jobs:
       run: dotnet build --no-restore --configuration Release
     - name: Zip artifacts
       shell: powershell
-      run: Compress-Archive -Path $(Get-ChildItem .\src\KG.Map\bin\Debug\net8.0-windows -Exclude *.pdb) -DestinationPath kg.map-${{ github.event.release.tag_name }}.zip
+      run: Compress-Archive -Path $(Get-ChildItem .\src\KG.Map\bin\Release\net8.0-windows -Exclude *.pdb) -DestinationPath kg.map-${{ github.event.release.tag_name }}.zip
     - name: upload release
       uses: actions/upload-release-asset@v1.0.1
       env:
