@@ -8,7 +8,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -17,17 +17,18 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore /p:EnableWindowsTargeting=true
-    - name: Build
-      run: dotnet build src/KG.Map/KG.Map.csproj /p:EnableWindowsTargeting=true --no-restore --configuration Release --output kg.map
-    - name: Zip
-      run: zip -r kg.map-${{ github.event.release.tag_name }}.zip kg.map -x *.pdb
+      run: dotnet restore
+    - name: Build project
+      run: dotnet build --no-restore --configuration Release
+    - name: Zip artifacts
+      shell: powershell
+      run: Compress-Archive -Path $(Get-ChildItem .\src\KG.Map\bin\Debug\net8.0-windows -Exclude *.pdb) -DestinationPath kg.map-${{ github.event.release.tag_name }}.zip
     - name: upload release
       uses: actions/upload-release-asset@v1.0.1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: ./kg.map-${{ github.event.release.tag_name }}.zip
+        asset_path: kg.map-${{ github.event.release.tag_name }}.zip
         asset_name: kg.map-${{ github.event.release.tag_name }}.zip
         asset_content_type: application/zip
