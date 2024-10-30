@@ -1,0 +1,33 @@
+name: .NET
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore --configuration Release --output kg.map
+    - name: Zip
+      run: zip kg.map-${{ github.event.release.tag_name }}.zip kg.map
+    - name: upload release
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ./kg.map-${{ github.event.release.tag_name }}.zip
+        asset_name: kg.map-${{ github.event.release.tag_name }}.zip
+        asset_content_type: application/zip
